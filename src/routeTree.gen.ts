@@ -10,12 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as DeepfaceRouteImport } from './routes/deepface'
+import { Route as FacenetRouteImport } from './routes/facenet'
 import { Route as TemplateMatchingRouteImport } from './routes/template-matching'
 import { Route as ViolaJonesRouteImport } from './routes/viola-jones'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeepfaceRoute = DeepfaceRouteImport.update({
+  id: '/deepface',
+  path: '/deepface',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacenetRoute = FacenetRouteImport.update({
+  id: '/facenet',
+  path: '/facenet',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TemplateMatchingRoute = TemplateMatchingRouteImport.update({
@@ -31,30 +49,61 @@ const ViolaJonesRoute = ViolaJonesRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/deepface': typeof DeepfaceRoute
+  '/facenet': typeof FacenetRoute
   '/template-matching': typeof TemplateMatchingRoute
   '/viola-jones': typeof ViolaJonesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/deepface': typeof DeepfaceRoute
+  '/facenet': typeof FacenetRoute
   '/template-matching': typeof TemplateMatchingRoute
   '/viola-jones': typeof ViolaJonesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/deepface': typeof DeepfaceRoute
+  '/facenet': typeof FacenetRoute
   '/template-matching': typeof TemplateMatchingRoute
   '/viola-jones': typeof ViolaJonesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/template-matching' | '/viola-jones'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/deepface'
+    | '/facenet'
+    | '/template-matching'
+    | '/viola-jones'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/template-matching' | '/viola-jones'
-  id: '__root__' | '/' | '/template-matching' | '/viola-jones'
+  to:
+    | '/'
+    | '/about'
+    | '/deepface'
+    | '/facenet'
+    | '/template-matching'
+    | '/viola-jones'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/deepface'
+    | '/facenet'
+    | '/template-matching'
+    | '/viola-jones'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  DeepfaceRoute: typeof DeepfaceRoute
+  FacenetRoute: typeof FacenetRoute
   TemplateMatchingRoute: typeof TemplateMatchingRoute
   ViolaJonesRoute: typeof ViolaJonesRoute
 }
@@ -66,6 +115,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/deepface': {
+      id: '/deepface'
+      path: '/deepface'
+      fullPath: '/deepface'
+      preLoaderRoute: typeof DeepfaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/facenet': {
+      id: '/facenet'
+      path: '/facenet'
+      fullPath: '/facenet'
+      preLoaderRoute: typeof FacenetRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/template-matching': {
@@ -87,6 +157,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  DeepfaceRoute: DeepfaceRoute,
+  FacenetRoute: FacenetRoute,
   TemplateMatchingRoute: TemplateMatchingRoute,
   ViolaJonesRoute: ViolaJonesRoute,
 }
