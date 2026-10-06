@@ -1,26 +1,45 @@
-# Pixel Perfect Preview
+# VISIONLAB — Image & Video Analytics
 
-Implement exactly the screenshot and nothing else
+🔗 **Live Demo:** [VISIONLAB — Live Website](https://snapshot-mirror-pix.vercel.app/?utm_source=chatgpt.com)
 
-This project was built with [Lovable](https://lovable.dev).
+**VISIONLAB** is an interactive **Image & Video Analytics (IVA)** laboratory that demonstrates four important computer-vision techniques through a modern, responsive web interface.
 
-**Live app**: https://snapshot-mirror-pix.lovable.app
+## 🚀 Features
 
-## Build with Lovable
+- 🔍 **Template Matching** — Locate a template inside a source image.
+- 👤 **Viola-Jones** — Face detection using Haar-like features and cascade classifiers.
+- 🧠 **DeepFace** — Facial attribute analysis including age, gender, and emotions.
+- 🔐 **FaceNet** — Face embeddings and face verification using embedding distance.
+- 📊 Algorithm comparison and system architecture visualization.
+- 🖼️ Drag-and-drop image processing with validation.
+- ⚡ Real-time results, metrics, bounding boxes, and downloadable outputs.
+- 📱 Fully responsive professional UI.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/7e7a8826-26be-4f6f-b135-a91783d26246).
+## 🛠️ Tech Stack
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+**Frontend:** React, JavaScript, CSS  
+**Computer Vision:** OpenCV.js  
+**Deep Learning:** TensorFlow.js  
+**Deployment:** Vercel
 
-## Development
+## 🧩 Algorithms
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+| Algorithm | Purpose | Category |
+|---|---|---|
+| Template Matching | Object localization | Classical CV |
+| Viola-Jones | Face detection | Classical ML |
+| DeepFace | Facial analysis | Deep Learning |
+| FaceNet | Face verification | Deep Learning |
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## 🎯 Objective
+
+The project provides an interactive way to understand and demonstrate **classical computer vision, face detection, facial analysis, and face recognition** concepts as part of an academic IVA assignment.
+
+## 👨‍💻 Project
+
+**B.Tech Artificial Intelligence & Data Science**  
+**Image & Video Analytics — Academic Project**
+
+---
+
+⭐ If you find this project useful, consider giving the repository a star.
